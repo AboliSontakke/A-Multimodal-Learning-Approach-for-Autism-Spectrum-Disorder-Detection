@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Guide - Multimodal ASD Screening</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        h1 { color: #667eea; font-size: 36px; margin-bottom: 10px; }
+        .subtitle { color: #666; font-size: 18px; }
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h2 {
+            color: #667eea;
+            font-size: 28px;
+            margin: 30px 0 20px 0;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            display: block;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        .platform-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid #667eea;
+        }
+        .back-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: all 0.3s;
+        }
+        .back-btn:hover { background: #764ba2; }
+        .note {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>☁️ Deployment Guide</h1>
+            <p class="subtitle">Deploy your ASD screening system to Heroku, AWS, or Google Cloud</p>
+        </div>
+
+        <div class="content">
+            <h2>📦 Deployment Options</h2>
+            
+            <div class="platform-section">
+                <h3>1. Heroku (Easiest - Recommended for beginners)</h3>
+                <p>Free tier available, automatic HTTPS, easy setup</p>
+                
+                <h4>Prerequisites:</h4>
+                <ul>
+                    <li>Heroku account (free)</li>
+                    <li>Heroku CLI installed</li>
+                    <li>Git repository</li>
+                </ul>
+
+                <h4>Steps:</h4>
+                <code># Install Heroku CLI
+# Download from https://devcenter.heroku.com/articles/heroku-cli
+
+# Login to Heroku
+heroku login
+
+# Create new Heroku app
+heroku create multimodal-asd-screening
+
+# Add Procfile to your Backend folder
+echo "web: gunicorn app:app" > Procfile
+
+# Install gunicorn
+pip install gunicorn
+pip freeze > requirements.txt
+
+# Deploy
+git add .
+git commit -m "Prepare for Heroku deployment"
+git push heroku main
+
+# Open your app
+heroku open</code>
+
+                <div class="note">
+                    <strong>⚠️ Note:</strong> Free tier may be slow. Consider upgrading for production use.
+                </div>
+            </div>
+
+            <div class="platform-section">
+                <h3>2. AWS (Amazon Web Services)</h3>
+                <p>Scalable, reliable, industry-standard cloud platform</p>
+                
+                <h4>Using AWS Elastic Beanstalk:</h4>
+                <code># Install AWS CLI
+pip install awscli awsebcli
+
+# Configure AWS credentials
+aws configure
+
+# Initialize Elastic Beanstalk
+eb init -p python-3.8 multimodal-asd
+
+# Create environment and deploy
+eb create multimodal-env
+eb deploy
+
+# Open application
+eb open</code>
+
+                <h4>Using AWS EC2 (Manual):</h4>
+                <code># SSH into EC2 instance
+ssh -i your-key.pem ec2-user@your-instance-ip
+
+# Install dependencies
+sudo yum update -y
+sudo yum install python3 python3-pip -y
+sudo pip3 install virtualenv
+
+# Clone your project
+git clone https://github.com/Shreshth-Ghub/Multimodal_Autism_Screening_System
+cd Multimodal_Autism_Screening_System/Backend
+
+# Setup and run
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+gunicorn -b 0.0.0.0:8000 app:app</code>
+            </div>
+
+            <div class="platform-section">
+                <h3>3. Google Cloud Platform (GCP)</h3>
+                <p>Google's cloud infrastructure with App Engine</p>
+                
+                <h4>Using App Engine:</h4>
+                <code># Install Google Cloud SDK
+# Download from https://cloud.google.com/sdk
+
+# Login and set project
+gcloud auth login
+gcloud config set project YOUR_PROJECT_ID
+
+# Create app.yaml file
+echo "runtime: python38
+entrypoint: gunicorn -b :$PORT app:app" > app.yaml
+
+# Deploy
+gcloud app deploy
+
+# Open application
+gcloud app browse</code>
+            </div>
+
+            <h2>🛠️ Production Configuration</h2>
+
+            <h3>Environment Variables</h3>
+            <p>Create a <code>.env</code> file:</p>
+            <code>FLASK_ENV=production
+SECRET_KEY=your-secret-key-here
+DEBUG=False
+PORT=5000</code>
+
+            <h3>CORS Configuration</h3>
+            <p>Update your app.py for production:</p>
+            <code>from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app, origins=["https://your-frontend-domain.com"])</code>
+
+            <h3>Gunicorn Configuration</h3>
+            <p>Create <code>gunicorn.conf.py</code>:</p>
+            <code>workers = 4
+bind = "0.0.0.0:8000"
+timeout = 120
+keepalive = 5</code>
+
+            <h2>📊 Monitoring & Logging</h2>
+            <ul>
+                <li>Use Heroku Logs: <code>heroku logs --tail</code></li>
+                <li>AWS CloudWatch for AWS deployments</li>
+                <li>Google Cloud Logging for GCP</li>
+                <li>Consider Sentry for error tracking</li>
+            </ul>
+
+            <h2>🔒 Security Checklist</h2>
+            <ul>
+                <li>✅ Use HTTPS (automatic on Heroku/AWS/GCP)</li>
+                <li>✅ Set <code>DEBUG=False</code> in production</li>
+                <li>✅ Use environment variables for secrets</li>
+                <li>✅ Implement rate limiting</li>
+                <li>✅ Add input validation</li>
+                <li>✅ Keep dependencies updated</li>
+            </ul>
+
+            <a href="index.html" class="back-btn">← Back to Documentation</a>
+        </div>
+    </div>
+</body>
+</html>

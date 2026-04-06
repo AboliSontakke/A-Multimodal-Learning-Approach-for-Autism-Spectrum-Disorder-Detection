@@ -1,0 +1,30 @@
+# Flask Backend Dependencies
+Flask==2.3.2
+Flask-CORS==4.0.0
+Werkzeug==2.3.7
+
+# Deep Learning
+tensorflow==2.13.0
+torch==2.0.1
+torchvision==0.15.2
+
+# Machine Learning & Data Processing
+scikit-learn==1.3.0
+xgboost==1.7.6
+pandas==2.0.3
+numpy==1.24.3
+
+# Audio & Image Processing
+librosa==0.10.0
+soundfile==0.12.1
+opencv-python==4.8.0.76
+Pillow==10.0.0
+
+# Utilities
+matplotlib==3.7.2
+seaborn==0.12.2
+requests==2.31.0
+python-dotenv==1.0.0
+
+# Deployment (optional)
+gunicorn==21.2.0

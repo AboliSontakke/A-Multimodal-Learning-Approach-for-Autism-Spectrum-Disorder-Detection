@@ -1,0 +1,42 @@
+{
+  "behavioral": {
+    "accuracy": "97.00%",
+    "precision": "96.08%",
+    "recall": "98.00%",
+    "f1": "97.03%",
+    "auroc": "99.84%"
+  },
+  "voice": {
+    "accuracy": "97.00%",
+    "precision": "97.96%",
+    "recall": "96.00%",
+    "f1": "96.97%",
+    "auroc": "99.60%"
+  },
+  "facial": {
+    "accuracy": "64.00%",
+    "precision": "75.00%",
+    "recall": "42.00%",
+    "f1": "53.85%",
+    "auroc": "63.66%"
+  },
+  "fusion": {
+    "accuracy": "100.00%",
+    "precision": "100.00%",
+    "recall": "100.00%",
+    "f1": "100.00%",
+    "auroc": "100.00%"
+  },
+  "training_config": {
+    "augment_per_class": 250,
+    "total_samples_per_modality": 500,
+    "voice_epochs": 100,
+    "facial_epochs": 100,
+    "fusion_epochs": 120,
+    "image_size": [
+      128,
+      128
+    ],
+    "balanced": true
+  }
+}

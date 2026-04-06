@@ -1,0 +1,22 @@
+# Python & venv
+venv/
+ENV/
+.env
+__pycache__/
+*.pyc
+
+# Exclude the backend venv specifically
+Backend/venv/
+Backend/venv/*
+
+# Big binaries and compiled files
+*.dll
+*.so
+*.pyd
+
+# Trained models (if large)
+*.h5
+*.pkl
+
+# Data outputs
+/data/

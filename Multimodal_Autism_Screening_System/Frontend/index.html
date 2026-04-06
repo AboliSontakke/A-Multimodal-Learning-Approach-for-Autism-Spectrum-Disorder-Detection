@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimodal ASD Screening System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo"><i class="fas fa-brain"></i> Multimodal ASD Screening System</h1>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#upload" class="nav-link">Upload Data</a>
+                    <a href="#docs" class="nav-link">Documentation</a>
+                    <span id="backend-status" style="display:none; font-size:0.8rem; padding:4px 10px; border-radius:12px; background:rgba(255,255,255,0.1);"></span>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">AI Powered Autism Spectrum Disorder Screening</h2>
+                <p class="hero-subtitle">Advanced multimodal analysis using behavioral data, voice recordings, and facial images</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('upload')">
+                        <i class="fas fa-upload"></i> Start Screening
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('about')">
+                        <i class="fas fa-info-circle"></i> Learn More
+                    </button>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-file-alt feature-icon"></i>
+                    <h3>Behavioral Analysis</h3>
+                    <p>XGBoost classifier analyzing questionnaire responses with 97% accuracy</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-microphone feature-icon"></i>
+                    <h3>Voice Analysis</h3>
+                    <p>CNN network processing audio features (MFCCs + deltas) with 97% accuracy</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-camera feature-icon"></i>
+                    <h3>Facial Analysis</h3>
+                    <p>Deep CNN analyzing facial features for screening support</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-project-diagram feature-icon"></i>
+                    <h3>Multimodal Fusion</h3>
+                    <p>Combined predictions from all modalities achieving 100% accuracy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Our system uses advanced deep learning to analyze multiple data types simultaneously</p>
+
+            <div class="workflow">
+                <div class="workflow-step">
+                    <div class="step-number">1</div>
+                    <h3>Upload Data</h3>
+                    <p>Provide behavioral questionnaire, voice recording, and facial image</p>
+                </div>
+                <div class="workflow-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="workflow-step">
+                    <div class="step-number">2</div>
+                    <h3>AI Processing</h3>
+                    <p>Each modality analyzed by specialized deep learning models</p>
+                </div>
+                <div class="workflow-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="workflow-step">
+                    <div class="step-number">3</div>
+                    <h3>Fusion Network</h3>
+                    <p>Predictions combined for comprehensive analysis</p>
+                </div>
+                <div class="workflow-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="workflow-step">
+                    <div class="step-number">4</div>
+                    <h3>Get Results</h3>
+                    <p>Receive detailed risk assessment and recommendations</p>
+                </div>
+            </div>
+
+            <div class="architecture">
+                <h3>System Architecture</h3>
+                <div class="arch-diagram">
+                    <div class="arch-layer">
+                        <h4>Input Layer</h4>
+                        <div class="arch-items">
+                            <span class="arch-item">Behavioral CSV</span>
+                            <span class="arch-item">Voice WAV</span>
+                            <span class="arch-item">Face Image</span>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h4>Preprocessing</h4>
+                        <div class="arch-items">
+                            <span class="arch-item">Feature Scaling</span>
+                            <span class="arch-item">MFCC Extraction</span>
+                            <span class="arch-item">Image Resize</span>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h4>Model Layer</h4>
+                        <div class="arch-items">
+                            <span class="arch-item">XGBoost</span>
+                            <span class="arch-item">CNN-LSTM</span>
+                            <span class="arch-item">ResNet50</span>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h4>Fusion Layer</h4>
+                        <div class="arch-items">
+                            <span class="arch-item">Dense Network (98D)</span>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h4>Output</h4>
+                        <div class="arch-items">
+                            <span class="arch-item">Prediction + Risk Level</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="upload" class="upload-section">
+        <div class="container">
+            <h2 class="section-title">Upload Screening Data</h2>
+            <p class="section-subtitle">Please provide all three types of data for accurate screening</p>
+
+            <div id="upload-form" class="upload-form">
+                <div class="upload-grid">
+                    <!-- Behavioral Data -->
+                    <div class="upload-card">
+                        <div class="upload-icon"><i class="fas fa-file-csv"></i></div>
+                        <h3>Behavioral Data</h3>
+                        <p>Questionnaire responses (CSV or JSON)</p>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="behavioral-file" accept=".csv,.json" onchange="handleFileSelect('behavioral', this)">
+                            <label for="behavioral-file" class="file-label">
+                                <i class="fas fa-cloud-upload-alt"></i> Choose File
+                            </label>
+                        </div>
+                        <div id="behavioral-status" class="file-status"></div>
+                        <div class="file-info">
+                            <small>Accepted: CSV, JSON | Max: 10MB</small>
+                        </div>
+                    </div>
+
+                    <div class="upload-card">
+                        <div class="upload-icon"><i class="fas fa-microphone-alt"></i></div>
+                        <h3>Voice Recording</h3>
+                        <p>Audio sample (WAV, MP3, or OGG)</p>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="voice-file" accept=".wav,.mp3,.ogg" onchange="handleFileSelect('voice', this)">
+                            <label for="voice-file" class="file-label">
+                                <i class="fas fa-cloud-upload-alt"></i> Choose File
+                            </label>
+                        </div>
+                        <div id="voice-status" class="file-status"></div>
+                        <div class="file-info">
+                            <small>Accepted: WAV, MP3, OGG | Max: 30MB</small>
+                        </div>
+                    </div>
+
+                    <div class="upload-card">
+                        <div class="upload-icon"><i class="fas fa-user-circle"></i></div>
+                        <h3>Facial Image</h3>
+                        <p>Clear frontal face photo (JPG or PNG)</p>
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="image-file" accept=".jpg,.jpeg,.png" onchange="handleFileSelect('image', this)">
+                            <label for="image-file" class="file-label">
+                                <i class="fas fa-cloud-upload-alt"></i> Choose File
+                            </label>
+                        </div>
+                        <div id="image-status" class="file-status"></div>
+                        <div id="image-preview" class="image-preview"></div>
+                        <div class="file-info">
+                            <small>Accepted: JPG, PNG | Max: 20MB</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-actions">
+                    <button id="analyze-btn" class="btn btn-primary btn-large" onclick="analyzeData()" disabled>
+                        <i class="fas fa-chart-line"></i> Analyze Data
+                    </button>
+                    <button class="btn btn-secondary" onclick="clearAll()">
+                        <i class="fas fa-times"></i> Clear All
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Screen -->
+            <div id="loading-screen" class="loading-screen" style="display: none;">
+                <div class="loading-content">
+                    <div class="spinner"></div>
+                    <h3>Analyzing Data...</h3>
+                    <p id="loading-text">Processing behavioral data...</p>
+                    <div class="progress-bar">
+                        <div id="progress" class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results-section" class="results-section" style="display: none;">
+                <h2 class="section-title">Screening Results</h2>
+
+                <div class="main-result">
+                    <div class="result-card primary-result">
+                        <h3>Overall Prediction</h3>
+                        <div class="prediction-label" id="prediction-label">ASD Positive</div>
+                        <div class="risk-badge" id="risk-badge">High Risk</div>
+                        <div class="confidence-section">
+                            <p>Confidence Score</p>
+                            <div class="progress-bar large">
+                                <div id="confidence-bar" class="progress-fill" style="width: 87%"></div>
+                            </div>
+                            <span id="confidence-text" class="confidence-value">87%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="source-info" style="display:none; text-align:center; padding:8px 16px; margin:10px auto; font-size:0.9rem; border-radius:8px; background:rgba(0,0,0,0.05); max-width:400px;"></div>
+
+                <div class="modality-results">
+                    <div class="result-card">
+                        <h4><i class="fas fa-file-alt"></i> Behavioral Model</h4>
+                        <div class="modality-prediction" id="behavioral-prediction">ASD</div>
+                        <div class="progress-bar">
+                            <div id="behavioral-bar" class="progress-fill"></div>
+                        </div>
+                        <p id="behavioral-prob" class="probability">82%</p>
+                    </div>
+
+                    <div class="result-card">
+                        <h4><i class="fas fa-microphone"></i> Voice Model</h4>
+                        <div class="modality-prediction" id="voice-prediction">ASD</div>
+                        <div class="progress-bar">
+                            <div id="voice-bar" class="progress-fill"></div>
+                        </div>
+                        <p id="voice-prob" class="probability">79%</p>
+                    </div>
+
+                    <div class="result-card">
+                        <h4><i class="fas fa-camera"></i> Facial Model</h4>
+                        <div class="modality-prediction" id="facial-prediction">ASD</div>
+                        <div class="progress-bar">
+                            <div id="facial-bar" class="progress-fill"></div>
+                        </div>
+                        <p id="facial-prob" class="probability">85%</p>
+                    </div>
+                </div>
+
+                <div class="disclaimer-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p><strong>Important:</strong> This screening tool is designed to assist healthcare professionals and should not be used as a sole diagnostic tool. Please consult with a qualified medical professional for proper diagnosis and treatment.</p>
+                </div>
+
+                <div class="results-actions">
+                    <button class="btn btn-primary" onclick="downloadResults()">
+                        <i class="fas fa-download"></i> Download Results
+                    </button>
+                    <button class="btn btn-secondary" onclick="newAnalysis()">
+                        <i class="fas fa-redo"></i> New Analysis
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="docs" class="docs-section">
+        <div class="container">
+            <h2 class="section-title">Documentation & Resources</h2>
+
+            <div class="docs-grid">
+                <div class="doc-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Quick Start</h3>
+                    <p>Get started in 5 minutes with our quick setup guide</p>
+                    <a href="quickstart.html">Read Guide →</a>
+                </div>
+                <div class="doc-card">
+                    <i class="fas fa-book"></i>
+                    <h3>API Documentation</h3>
+                    <p>Complete REST API reference and examples</p>
+                    <a href="api-docs.html">View Docs →</a>
+                </div>
+                <div class="doc-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Source Code</h3>
+                    <p>Access the complete codebase on GitHub</p>
+                    <a href="https://github.com/Shreshth-Ghub/Multimodal_Autism_Screening_System">View Code →</a>
+                </div>
+                <div class="doc-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Deployment Guide</h3>
+                    <p>Deploy to Heroku, AWS, or Google Cloud</p>
+                    <a href="deployment.html">Deploy →</a>
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <h3>Technology Stack</h3>
+                <div class="tech-badges">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">TensorFlow</span>
+                    <span class="tech-badge">PyTorch</span>
+                    <span class="tech-badge">XGBoost</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">scikit-learn</span>
+                    <span class="tech-badge">librosa</span>
+                    <span class="tech-badge">OpenCV</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Multimodal ASD Screening</h4>
+                    <p>AI powered screening system for Autism Spectrum Disorder using advanced deep learning techniques.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#upload">Upload</a>
+                    <a href="#docs">Documentation</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <a href="api-docs.html">View Docs →</a>
+                    <a href="https://github.com/Shreshth-Ghub/Multimodal_Autism_Screening_System">View Code →</a>
+                    <a href="research.html">Research Papers</a>
+                    <a href="#">Contact Support</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Multimodal ASD Screening System. AI in Healthcare Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

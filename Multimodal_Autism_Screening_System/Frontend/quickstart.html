@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Start Guide - Multimodal ASD Screening</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 28px;
+            margin: 30px 0 20px 0;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #764ba2;
+            font-size: 22px;
+            margin: 20px 0 15px 0;
+        }
+
+        .step {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            display: block;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .inline-code {
+            background: #e8e8e8;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #d63031;
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        ul {
+            margin: 15px 0 15px 30px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Quick Start Guide</h1>
+            <p class="subtitle">Get your ASD screening system up and running in 5 minutes</p>
+        </div>
+
+        <div class="content">
+            <h2>📋 Prerequisites</h2>
+            <p>Before starting, make sure you have:</p>
+            <ul>
+                <li>Python 3.8 or higher installed</li>
+                <li>Git (for cloning the repository)</li>
+                <li>Basic command line knowledge</li>
+                <li>Modern web browser (Chrome, Firefox, Edge)</li>
+            </ul>
+
+            <h2>⚡ Installation Steps</h2>
+
+            <div class="step">
+                <h3><span class="step-number">1</span>Clone the Repository</h3>
+                <p>Open your terminal and run:</p>
+                <code>git clone https://github.com/Shreshth-Ghub/Multimodal_Autism_Screening_System
+cd Multimodal_Autism_Screening_System</code>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">2</span>Create Virtual Environment</h3>
+                <p>Create and activate a Python virtual environment:</p>
+                <code># Windows
+cd Backend
+python -m venv venv
+venv\Scripts\activate
+
+# Mac/Linux
+cd Backend
+python3 -m venv venv
+source venv/bin/activate</code>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">3</span>Install Dependencies</h3>
+                <p>Install all required Python packages:</p>
+                <code>pip install -r requirements.txt</code>
+                <div class="note">
+                    <strong>⚠️ Note:</strong> This may take 5-10 minutes depending on your internet speed.
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">4</span>Train Models (Optional)</h3>
+                <p>If you want to train models from scratch:</p>
+                <code>python simple_training.py</code>
+                <p>Or use pre-trained models from <span class="inline-code">saved_models/</span> folder.</p>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">5</span>Start Backend Server</h3>
+                <p>Launch the Flask API:</p>
+                <code>python app.py</code>
+                <div class="success">
+                    <strong>✅ Success!</strong> Your backend is now running at <strong>http://localhost:5000</strong>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">6</span>Open Frontend</h3>
+                <p>In a new terminal, navigate to frontend folder:</p>
+                <code>cd ../Frontend
+# Open index.html in your browser
+# Or use Live Server extension in VS Code</code>
+            </div>
+
+            <h2>🎯 Testing the System</h2>
+            
+            <div class="step">
+                <h3>Upload Sample Data</h3>
+                <ol>
+                    <li>Go to <strong>Upload Data</strong> section</li>
+                    <li>Upload behavioral CSV file</li>
+                    <li>Upload voice recording (WAV/MP3)</li>
+                    <li>Upload facial image (JPG/PNG)</li>
+                    <li>Click <strong>Analyze Data</strong></li>
+                    <li>View predictions and confidence scores</li>
+                </ol>
+            </div>
+
+            <h2>📚 API Endpoints</h2>
+            <ul>
+                <li><strong>GET /</strong> - Health check</li>
+                <li><strong>GET /api/models/status</strong> - Check if models are loaded</li>
+                <li><strong>POST /api/predict</strong> - Make ASD prediction</li>
+            </ul>
+
+            <h2>🔧 Troubleshooting</h2>
+            
+            <h3>Backend Not Starting?</h3>
+            <ul>
+                <li>Make sure virtual environment is activated</li>
+                <li>Check if port 5000 is already in use</li>
+                <li>Verify all dependencies are installed</li>
+            </ul>
+
+            <h3>Models Not Loading?</h3>
+            <ul>
+                <li>Check if <span class="inline-code">saved_models/</span> folder exists</li>
+                <li>Run <span class="inline-code">python simple_training.py</span> to create models</li>
+                <li>Verify model files are not corrupted</li>
+            </ul>
+
+            <h3>Frontend Not Showing Results?</h3>
+            <ul>
+                <li>Check browser console for errors (F12)</li>
+                <li>Verify backend is running on localhost:5000</li>
+                <li>Check CORS settings in Flask app</li>
+            </ul>
+
+            <h2>📞 Need Help?</h2>
+            <p>If you encounter any issues:</p>
+            <ul>
+                <li>Check our <a href="api-docs.html">API Documentation</a></li>
+                <li>Visit our <a href="https://github.com/Shreshth-Ghub/Multimodal_Autism_Screening_System">GitHub Repository</a></li>
+                <li>Open an issue on GitHub</li>
+                <li>Contact: shreshthgupt@gmail.com</li>
+            </ul>
+
+            <a href="index.html" class="back-btn">← Back to Documentation</a>
+        </div>
+    </div>
+</body>
+</html>

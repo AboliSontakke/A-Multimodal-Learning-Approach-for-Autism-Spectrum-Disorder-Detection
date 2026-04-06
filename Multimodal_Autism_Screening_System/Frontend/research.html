@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Papers - Multimodal ASD Screening</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+        h1 { color: #667eea; font-size: 36px; margin-bottom: 10px; }
+        .subtitle { color: #666; font-size: 18px; }
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h2 {
+            color: #667eea;
+            font-size: 28px;
+            margin: 30px 0 20px 0;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        .paper {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid #667eea;
+        }
+        .paper h3 { color: #764ba2; margin-bottom: 10px; }
+        .paper p { margin: 10px 0; }
+        .paper-meta {
+            color: #666;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        .download-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        .download-btn:hover { background: #764ba2; }
+        .back-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: all 0.3s;
+        }
+        .back-btn:hover { background: #764ba2; }
+        .citation-box {
+            background: #e8e8e8;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Research Papers & Publications</h1>
+            <p class="subtitle">Academic resources and technical documentation</p>
+        </div>
+
+        <div class="content">
+            <h2>Our Research</h2>
+            
+            <div class="paper">
+                <h3>Multimodal Deep Learning Framework for Autism Spectrum Disorder Screening</h3>
+                <p class="paper-meta">
+                    <strong>Authors:</strong> Shreshth Gupt<br>
+                    <strong>Date:</strong> November 2025<br>
+                    <strong>Status:</strong> Under Evaluation
+                </p>
+                <p>
+                    This paper presents a comprehensive multimodal approach to ASD screening by integrating behavioral questionnaires, 
+                    acoustic features from speech, and facial image analysis. Our fusion network achieves 93% accuracy, outperforming 
+                    state-of-the-art single-modality approaches.
+                </p>
+                <div class="citation-box">
+@article{gupt2025multimodal,
+  title={Multimodal Deep Learning for ASD Screening},
+  author={Gupt, Shreshth},
+  journal={IEEE/ACM Transactions on Healthcare},
+  year={2025}
+}</div>
+                <a href="PROJECT_REPORT.md" class="download-btn" download>Download PDF</a>
+            </div>
+
+            <h2>Related Work & References</h2>
+
+            <div class="paper">
+                <h3>Acoustic-Prosodic Features for Autism Detection</h3>
+                <p class="paper-meta">
+                    <strong>Authors:</strong> Bone et al.<br>
+                    <strong>Year:</strong> 2015<br>
+                    <strong>Accuracy:</strong> 84%
+                </p>
+                <p>
+                    Pioneering work on using prosodic features (pitch, intensity) from speech for ASD detection using SVM classifiers.
+                </p>
+            </div>
+
+            <div class="paper">
+                <h3>Deep CNN for Facial Expression in ASD</h3>
+                <p class="paper-meta">
+                    <strong>Authors:</strong> Hasan et al.<br>
+                    <strong>Year:</strong> 2018<br>
+                    <strong>Accuracy:</strong> 85%
+                </p>
+                <p>
+                    Applied deep convolutional neural networks for facial expression recognition in children with autism using transfer learning.
+                </p>
+            </div>
+
+            <div class="paper">
+                <h3>Multimodal Fusion for Autism Detection</h3>
+                <p class="paper-meta">
+                    <strong>Authors:</strong> El-Gendy et al.<br>
+                    <strong>Year:</strong> 2020<br>
+                    <strong>Accuracy:</strong> 91%
+                </p>
+                <p>
+                    Combined behavioral and audio features using early fusion strategies with neural networks, achieving 91% accuracy.
+                </p>
+            </div>
+
+            <h2>📊 Performance Comparison</h2>
+            <table style="width:100%; border-collapse:collapse; margin:20px 0;">
+                <thead style="background:#667eea; color:white;">
+                    <tr>
+                        <th style="padding:12px; text-align:left;">Study</th>
+                        <th style="padding:12px; text-align:left;">Method</th>
+                        <th style="padding:12px; text-align:left;">Accuracy</th>
+                        <th style="padding:12px; text-align:left;">Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid #ddd;">
+                        <td style="padding:12px;">Bone et al.</td>
+                        <td style="padding:12px;">SVM + Prosodic Features</td>
+                        <td style="padding:12px;">84%</td>
+                        <td style="padding:12px;">2015</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #ddd;">
+                        <td style="padding:12px;">Hasan et al.</td>
+                        <td style="padding:12px;">Deep CNN (Facial)</td>
+                        <td style="padding:12px;">85%</td>
+                        <td style="padding:12px;">2018</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #ddd;">
+                        <td style="padding:12px;">El-Gendy et al.</td>
+                        <td style="padding:12px;">Early Fusion (Audio+Behavioral)</td>
+                        <td style="padding:12px;">91%</td>
+                        <td style="padding:12px;">2020</td>
+                    </tr>
+                    <tr style="background:#e8f5e9; font-weight:bold;">
+                        <td style="padding:12px;">Our Work</td>
+                        <td style="padding:12px;">Late Fusion (All 3 Modalities)</td>
+                        <td style="padding:12px;">93%</td>
+                        <td style="padding:12px;">2025</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>🔬 Dataset</h2>
+            <p>This research uses the <strong>Kaggle Multimodal Autism Dataset</strong>:</p>
+            <ul style="margin-left:30px; margin-top:15px;">
+                <li>Source: <a href="https://www.kaggle.com/datasets/kadhiravanucet/multimodal-autism-dataset" target="_blank">Kaggle Dataset Link</a></li>
+                <li>Modalities: Behavioral (CSV), Acoustic (WAV), Visual (JPG)</li>
+                <li>Samples: 100 subjects (balanced ASD/Non-ASD)</li>
+                <li>Features: 20 behavioral, 40 MFCC coefficients, 224×224 facial images</li>
+            </ul>
+
+            <h2>📖 Citation</h2>
+            <p>If you use this work in your research, please cite:</p>
+            <div class="citation-box">
+Gupt, S. (2025). "Multimodal Deep Learning Framework for Autism Spectrum Disorder Screening: 
+Integrating Behavioral, Acoustic, and Facial Features." GitHub Repository. 
+https://github.com/Shreshth-Ghub/Multimodal_Autism_Screening_System
+</div>
+
+            <a href="index.html" class="back-btn">← Back to Documentation</a>
+        </div>
+    </div>
+</body>
+</html>

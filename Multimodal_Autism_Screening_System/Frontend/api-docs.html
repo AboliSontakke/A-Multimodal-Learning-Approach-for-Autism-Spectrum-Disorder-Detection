@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Documentation - Multimodal ASD Screening</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 18px;
+        }
+
+        .content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 28px;
+            margin: 30px 0 20px 0;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .endpoint {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid #667eea;
+        }
+
+        .method {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 14px;
+        }
+
+        .get {
+            background: #28a745;
+            color: white;
+        }
+
+        .post {
+            background: #007bff;
+            color: white;
+        }
+
+        .endpoint-path {
+            font-family: 'Courier New', monospace;
+            font-size: 18px;
+            color: #d63031;
+        }
+
+        code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            display: block;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+
+        .param-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .param-table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .param-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .param-table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .response-box {
+            background: #e8f5e9;
+            border-left: 5px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .error-box {
+            background: #ffebee;
+            border-left: 5px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 30px;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .required {
+            background: #dc3545;
+            color: white;
+        }
+
+        .optional {
+            background: #6c757d;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📖 API Documentation</h1>
+            <p class="subtitle">Complete REST API reference for Multimodal ASD Screening System</p>
+        </div>
+
+        <div class="content">
+            <h2>Base URL</h2>
+            <code>http://localhost:5000</code>
+            <p><strong>Production:</strong> Replace with your deployed URL</p>
+
+            <h2>Authentication</h2>
+            <p>Currently, the API does not require authentication. Future versions will include JWT token-based authentication.</p>
+
+            <h2>📡 Endpoints</h2>
+
+            <!-- Endpoint 1: Health Check -->
+            <div class="endpoint">
+                <h3>
+                    <span class="method get">GET</span>
+                    <span class="endpoint-path">/</span>
+                </h3>
+                <p><strong>Description:</strong> Health check endpoint to verify API is running</p>
+
+                <h4>Request</h4>
+                <code>curl http://localhost:5000/</code>
+
+                <h4>Response (200 OK)</h4>
+                <div class="response-box">
+                    <code>{
+  "status": "online",
+  "message": "Multimodal ASD Screening API",
+  "version": "1.0.0",
+  "endpoints": [
+    "/",
+    "/api/models/status",
+    "/api/predict"
+  ]
+}</code>
+                </div>
+            </div>
+
+            <!-- Endpoint 2: Model Status -->
+            <div class="endpoint">
+                <h3>
+                    <span class="method get">GET</span>
+                    <span class="endpoint-path">/api/models/status</span>
+                </h3>
+                <p><strong>Description:</strong> Check which AI models are loaded and ready</p>
+
+                <h4>Request</h4>
+                <code>curl http://localhost:5000/api/models/status</code>
+
+                <h4>Response (200 OK)</h4>
+                <div class="response-box">
+                    <code>{
+  "behavioral_model": true,
+  "voice_model": true,
+  "facial_model": true,
+  "fusion_model": true,
+  "all_models_loaded": true,
+  "timestamp": "2025-11-17T00:49:00Z"
+}</code>
+                </div>
+
+                <h4>Error Response (500)</h4>
+                <div class="error-box">
+                    <code>{
+  "error": "Models not loaded",
+  "details": "Behavioral model missing"
+}</code>
+                </div>
+            </div>
+
+            <!-- Endpoint 3: Prediction -->
+            <div class="endpoint">
+                <h3>
+                    <span class="method post">POST</span>
+                    <span class="endpoint-path">/api/predict</span>
+                </h3>
+                <p><strong>Description:</strong> Make ASD prediction from multimodal data</p>
+
+                <h4>Request Parameters (multipart/form-data)</h4>
+                <table class="param-table">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>behavioral_data</code></td>
+                            <td>File (CSV)</td>
+                            <td><span class="badge required">REQUIRED</span></td>
+                            <td>Behavioral questionnaire responses (20 features)</td>
+                        </tr>
+                        <tr>
+                            <td><code>voice_data</code></td>
+                            <td>File (WAV/MP3)</td>
+                            <td><span class="badge required">REQUIRED</span></td>
+                            <td>Voice recording (3-10 seconds recommended)</td>
+                        </tr>
+                        <tr>
+                            <td><code>image_data</code></td>
+                            <td>File (JPG/PNG)</td>
+                            <td><span class="badge required">REQUIRED</span></td>
+                            <td>Frontal facial image (224×224 or higher)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Example Request (cURL)</h4>
+                <code>curl -X POST http://localhost:5000/api/predict \
+  -F "behavioral_data=@behavioral.csv" \
+  -F "voice_data=@voice_sample.wav" \
+  -F "image_data=@face_image.jpg"</code>
+
+                <h4>Example Request (Python)</h4>
+                <code>import requests
+
+url = "http://localhost:5000/api/predict"
+
+files = {
+    'behavioral_data': open('behavioral.csv', 'rb'),
+    'voice_data': open('voice_sample.wav', 'rb'),
+    'image_data': open('face_image.jpg', 'rb')
+}
+
+response = requests.post(url, files=files)
+print(response.json())</code>
+
+                <h4>Example Request (JavaScript/Fetch)</h4>
+                <code>const formData = new FormData();
+formData.append('behavioral_data', behavioralFile);
+formData.append('voice_data', voiceFile);
+formData.append('image_data', imageFile);
+
+fetch('http://localhost:5000/api/predict', {
+    method: 'POST',
+    body: formData
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));</code>
+
+                <h4>Success Response (200 OK)</h4>
+                <div class="response-box">
+                    <code>{
+  "prediction": "ASD",
+  "confidence": 0.93,
+  "risk_level": "High",
+  "individual_scores": {
+    "behavioral": 0.87,
+    "voice": 0.84,
+    "facial": 0.90,
+    "fusion": 0.93
+  },
+  "interpretation": {
+    "result": "ASD Detected",
+    "recommendation": "Professional clinical evaluation recommended",
+    "accuracy": "93%"
+  },
+  "timestamp": "2025-11-17T00:49:00Z",
+  "processing_time_ms": 2340
+}</code>
+                </div>
+
+                <h4>Error Responses</h4>
+                <div class="error-box">
+                    <strong>400 Bad Request - Missing Files</strong>
+                    <code>{
+  "error": "Missing required files",
+  "missing": ["behavioral_data", "voice_data"]
+}</code>
+                </div>
+
+                <div class="error-box">
+                    <strong>415 Unsupported Media Type</strong>
+                    <code>{
+  "error": "Invalid file format",
+  "details": "Behavioral data must be CSV"
+}</code>
+                </div>
+
+                <div class="error-box">
+                    <strong>500 Internal Server Error</strong>
+                    <code>{
+  "error": "Prediction failed",
+  "details": "Model inference error"
+}</code>
+                </div>
+            </div>
+
+            <h2>📊 Response Codes</h2>
+            <table class="param-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Status</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>200</strong></td>
+                        <td>OK</td>
+                        <td>Request successful</td>
+                    </tr>
+                    <tr>
+                        <td><strong>400</strong></td>
+                        <td>Bad Request</td>
+                        <td>Missing or invalid parameters</td>
+                    </tr>
+                    <tr>
+                        <td><strong>415</strong></td>
+                        <td>Unsupported Media Type</td>
+                        <td>Invalid file format</td>
+                    </tr>
+                    <tr>
+                        <td><strong>500</strong></td>
+                        <td>Internal Server Error</td>
+                        <td>Server-side processing error</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>📄 CSV Format Example</h2>
+            <p>Behavioral data CSV should have 20 feature columns:</p>
+            <code>feature_0,feature_1,feature_2,...,feature_19
+0.5,0.8,0.3,...,0.7</code>
+
+            <h2>🔐 Rate Limiting</h2>
+            <p>Currently no rate limiting. Future versions will implement:</p>
+            <ul>
+                <li>100 requests per hour per IP</li>
+                <li>API key-based authentication</li>
+                <li>Premium tier for higher limits</li>
+            </ul>
+
+            <h2>🛠️ SDKs & Libraries</h2>
+            <p>Coming soon:</p>
+            <ul>
+                <li>Python SDK</li>
+                <li>JavaScript/Node.js SDK</li>
+                <li>Java SDK</li>
+            </ul>
+
+            <a href="index.html" class="back-btn">← Back to Documentation</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+File Name,Category,Description,Technology,Lines of Code
+requirements.txt,Backend - Dependencies,"Python dependencies for backend (Flask, TensorFlow, scikit-learn, etc.)",Python,25
+app.py,Backend - Main Application,Main Flask application with API endpoints and model loading,"Flask, Python",250
+behavioral_model.py,Backend - Models,XGBoost model for behavioral questionnaire data processing,"XGBoost, scikit-learn",150
+voice_model.py,Backend - Models,CNN-LSTM model for voice/audio feature extraction and classification,"TensorFlow/Keras, librosa",200
+facial_model.py,Backend - Models,ResNet50/EfficientNet model for facial image analysis,"TensorFlow/Keras, OpenCV",180
+fusion_model.py,Backend - Models,Multimodal fusion network combining all three modalities,TensorFlow/Keras,150
+package.json,Frontend - Dependencies,"NPM dependencies for React frontend (React, Material-UI, Axios)","Node.js, NPM",40
+App.js,Frontend - Main Component,Main React application with stepper and routing logic,"React, Material-UI",120
+UploadForm.jsx,Frontend - Components,File upload component with validation for three modalities,"React, Material-UI",200
+PredictionResults.jsx,Frontend - Components,Results display component showing predictions and risk assessment,"React, Material-UI, Recharts",220
+api.js,Frontend - Services,API service for communicating with Flask backend,Axios,80
+complete_training_pipeline.py,Training - Scripts,Complete training pipeline for all models with data preprocessing,"Python, TensorFlow, scikit-learn",600
+README.md,Documentation,Comprehensive project documentation and setup instructions,Markdown,350
+DEPLOYMENT_GUIDE.md,Documentation,Detailed deployment guide for various platforms,Markdown,400
