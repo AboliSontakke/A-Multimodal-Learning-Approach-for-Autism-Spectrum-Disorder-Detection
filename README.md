@@ -306,17 +306,6 @@ multimodal-asd-screening/
 - [ ] Integration with electronic health records
 - [ ] Longitudinal tracking of patients
 
-##  Important Disclaimer
-
-This system is designed as a **screening tool** to assist healthcare professionals and should **NOT** be used as a sole diagnostic tool. Proper ASD diagnosis requires comprehensive evaluation by qualified medical professionals including developmental pediatricians, psychologists, and speech therapists.
-
-##  Contributors
-
-- Shreshth Gupta - Developer
-
-##  License
-
-This project is licensed under the MIT License.
 
 ##  References
 
@@ -332,12 +321,3 @@ This project is licensed under the MIT License.
 - TensorFlow and PyTorch teams
 - Open-source community
 
-##  Contact
-
-For questions or collaboration:
-- Email: shreshthgupt@gmail.com
-- GitHub: [Your GitHub Profile]
-
----
-
-**Note**: This project is part of an AI in Healthcare course and demonstrates the application of multimodal deep learning for medical screening applications.
